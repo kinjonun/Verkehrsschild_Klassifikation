@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import cv2
 from PIL import Image
 import torch
@@ -103,8 +104,10 @@ for i in range(NUM_CATEGORIES):
     image_paths = os.listdir(path)
 
     for img_path in image_paths:
-        image = Image.open(path + '/' + img_path)
-        images.append(image)
+        full_path = os.path.join(path, img_path)  
+        image_np = mpimg.imread(full_path)
+        image_pil = Image.fromarray(np.uint8(image_np * 255))
+        images.append(image_pil)
         labels.append(i)
 
 
