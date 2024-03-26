@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import cv2
+# import cv2
 from PIL import Image
 import torch
 from torchvision import datasets, transforms
@@ -25,9 +25,9 @@ device = (
 
 
 # Load the data set
-data_dir = '/home/sun/archive'
-train_path = '/home/sun/archive/Train'
-test_path = '/home/sun/archive/Test'
+data_dir = '/home/zhensun/Downloads/gtrsb'
+train_path = '/home/zhensun/Downloads/gtrsb/Train'
+test_path = '/home/zhensun/Downloads/gtrsb/Test'
 train_csv = pd.read_csv(data_dir + '/Train.csv')
 test_csv = pd.read_csv(data_dir + '/Test.csv')
 
@@ -157,7 +157,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 best_val_accuracy = 0.0                         # initial best accuracy
 best_model_path = 'best_model.pth'              # set model saving path
 
-num_epochs = 10
+num_epochs = 1
 for epoch in range(num_epochs):
     model.train()
     train_loss = 0.0
