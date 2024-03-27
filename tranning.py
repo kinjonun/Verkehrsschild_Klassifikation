@@ -76,7 +76,7 @@ classes = { 0:'Speed limit (20km/h)',
             42:'End no passing veh > 3.5 tons' }
 
 NUM_CATEGORIES = len(os.listdir(train_path))
-print("klassenanzahl"+ NUM_CATEGORIES)
+print("klassenanzahl ist"+ NUM_CATEGORIES)
 
 class CustomDataset(Dataset):
     def __init__(self, images, labels, transform=None):
